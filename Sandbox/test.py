@@ -15,7 +15,7 @@ del mPath
 
 #####
 ####  jupyter notebook --ip=0.0.0.0 --port=8080 --no-browser 
-####  http://python_data-c9-johnsonice.c9users.io:8080
+####  http://python-c9-johnsonice.c9users.io:8080
 ####
 
 ###############
