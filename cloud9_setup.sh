@@ -32,7 +32,7 @@ http://repo.continuum.io/archive/
 jupyter notebook --ip=0.0.0.0 --port=8080 --no-browser  #now jupyter server is running 
 
 #go to following address and run jupyter notebook 
-http://python_data-c9-johnsonice.c9users.io/
+http://python-johnsonice.c9users.io:8080/tree
 
 #to make the default python runner to get anaconda packages, 
 #add /home/ubuntu/anaconda2/lib/python2.7/site-packages to environment variable 
