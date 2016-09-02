@@ -13,7 +13,7 @@ http://repo.continuum.io/archive/
 # install Anaconda
 	bash Anaconda2-4.0.0-Linux-x86_64.sh
 
-	# you should say now when it is trying to prepend the path 
+	# you should say yes when it is trying to prepend the path 
 	# otherwise you need to do it your self 
 
 	export PATH=~/anaconda2/bin:$PATH
@@ -24,13 +24,16 @@ http://repo.continuum.io/archive/
 # now close terminal, open a new one 
 	#update jupyter 
 	conda update --all --yes
-
+	
 #check conda environment 
 	conda env export -n root
 	conda list 
 # start jupyter note book 
 jupyter notebook --ip=0.0.0.0 --port=8080 --no-browser  #now jupyter server is running 
-
+# with customized config file 
+	jupyter notebook --generate-config
+	# change this line to be :c.NotebookApp.allow_origin = '*' , to solve chrome issue
+	jupyter notebook --ip=0.0.0.0 --port=8080 --no-browser --config=/home/ubuntu/.jupyter/jupyter_notebook_config.py
 #go to following address and run jupyter notebook 
 http://python-johnsonice.c9users.io:8080/tree
 
