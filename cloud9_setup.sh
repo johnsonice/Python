@@ -13,7 +13,7 @@ http://repo.continuum.io/archive/
 # install Anaconda
 	bash Anaconda2-4.0.0-Linux-x86_64.sh
 
-	# you should say now when it is trying to prepend the path 
+	# you should say yes when it is trying to prepend the path 
 	# otherwise you need to do it your self 
 
 	export PATH=~/anaconda2/bin:$PATH
@@ -24,18 +24,40 @@ http://repo.continuum.io/archive/
 # now close terminal, open a new one 
 	#update jupyter 
 	conda update --all --yes
-
+	
 #check conda environment 
 	conda env export -n root
 	conda list 
 # start jupyter note book 
 jupyter notebook --ip=0.0.0.0 --port=8080 --no-browser  #now jupyter server is running 
-
+# with customized config file 
+	jupyter notebook --generate-config
+	jupyter notebook --ip=0.0.0.0 --port=8080 --no-browser --config=/home/ubuntu/.jupyter/jupyter_notebook_config.py
+	# change this line to be :
+	# c.NotebookApp.allow_origin = '*' , to solve chrome issue
+	# c.NotebookApp.ip = '0.0.0.0'
+	# c.NotebookApp.open_browser = False
+	# c.NotebookApp.port = 8080
+	jupyter notebook  # after config all of them, you can just run it 
+	
 #go to following address and run jupyter notebook 
-http://python_data-c9-johnsonice.c9users.io/
+http://python-johnsonice.c9users.io:8080/tree
 
 #to make the default python runner to get anaconda packages, 
 #add /home/ubuntu/anaconda2/lib/python2.7/site-packages to environment variable 
+
+
+#####################################################################
+######## annocanda how to create a python 2.7 environment ###########
+#####################################################################
+
+# Create a new conda environment with Python 2.7.x
+conda create -n py27 python=2.7 anaconda
+
+# Activate the conda environment
+source activate py27 # or just activeate if you are in windows
+# Deactivate environment 
+source deactivate py27 # deactivate if you are in windows 
 
 
 
@@ -46,5 +68,16 @@ mysql-ctl start       #start instance
 mysql-ctl stop		  #end instance 
 mysql-ctl cli         #open mysql console 
 
+
+###############################################
+###############################################
+## possible issues with jupyter notebook 
+
+# ipython --version  ## does not work 
+conda config --add channels conda-forge
+conda install backports.shutil_get_terminal_size
+
+## if jupyter note can not find kernel use this:
+python2 -m ipykernel install --user   # for python 2 environment 
 
 

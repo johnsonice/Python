@@ -20,4 +20,5 @@ del mPath
 
 ###############
 ### once in vim mode use control + x to exit
+### windows --> Esc : x   to exit 
 ##############
