@@ -40,6 +40,10 @@ jupyter notebook --ip=0.0.0.0 --port=8080 --no-browser  #now jupyter server is r
 	# c.NotebookApp.port = 8080
 	jupyter notebook  # after config all of them, you can just run it 
 	
+	## recently i had problem that kernal can not be connect when trying to open up a new notebook ... 
+	sudo sh -c "jupyter notebook"    # seems to solve the problem, it seem that jupyter has problem when running in a docker. this line is like add a wraper to the command
+	
+	
 #go to following address and run jupyter notebook 
 http://python-johnsonice.c9users.io:8080/tree
 
