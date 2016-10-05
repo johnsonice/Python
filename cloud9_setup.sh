@@ -9,7 +9,7 @@ http://repo.continuum.io/archive/
 # 1 download Anaconda latest Linux 64 bit version 
 	mkdir Downloads
 	cd Downloads
-	wget http://repo.continuum.io/archive/Anaconda2-4.0.0-Linux-x86_64.sh
+	wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
 # install Anaconda
 	bash Anaconda2-4.0.0-Linux-x86_64.sh
 
